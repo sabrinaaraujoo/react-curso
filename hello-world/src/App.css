@@ -1,0 +1,39 @@
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 800px;
+  margin-bottom: 800px;
+}
+
+.Card{
+  max-width: 250px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.Card h2{
+  color: rgb(5, 143, 229);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.Texto{
+  font-size: 16px;
+  font-weight: 300;
+  color: #777;
+}
+
+h1{
+  width: 100%;
+  text-align: center;
+}
+
+img{
+  
+  max-width: 500px;
+}
