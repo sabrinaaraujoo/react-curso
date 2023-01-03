@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { useState, useEffect } from "react";
+
+const url = "http://localhost:3000/products";
 
 function App() {
+  const [products, setProducts] = useState([]);
+
+  // Resgatando Dados
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch(url);
+
+      const data = await res.json();
+
+      setProducts(data);
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Listas de Produtos</h1>
+
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            {product.name} - R$ {product.price}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
