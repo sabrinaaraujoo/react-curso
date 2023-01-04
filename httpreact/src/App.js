@@ -22,7 +22,7 @@ function App() {
     fetchData();
   }, []);
 
-  // 2 - add de produtos
+  // add de produtos
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,6 +38,16 @@ function App() {
       },
       body: JSON.stringify(product),
     });
+
+    // carregamento dinâmico
+
+    const addedProduct = await res.json();
+
+    // Carregameto dinâmico
+    setProducts((prevProducts) => [...prevProducts, addedProduct]);
+
+    setName("");
+    setPrice("");
   };
 
   return (
