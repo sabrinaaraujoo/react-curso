@@ -54,6 +54,11 @@
       "name": "monitor",
       "price": "1000.00",
       "id": 14
+    },
+    {
+      "name": "mouse pad",
+      "price": "20.00",
+      "id": 15
     }
   ]
 }

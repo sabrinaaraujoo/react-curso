@@ -101,7 +101,10 @@ function App() {
               onChange={(e) => setPrice(e.target.value)}
             />
           </label>
-          <input type="submit" value="Criar" />
+          {/* loading no POST */}
+
+          {loading && <input type="submit" disabled value="Enviando..." />}
+          {!loading && <input type="submit" value="Criar" />}
         </form>
       </div>
     </div>
