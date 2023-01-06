@@ -31,9 +31,14 @@
       "id": 6
     },
     {
-      "name": "toalha",
-      "price": "50.00",
-      "id": 7
+      "name": "teclado",
+      "price": "22.50",
+      "id": 10
+    },
+    {
+      "name": "estojo",
+      "price": "10.00",
+      "id": 11
     }
   ]
 }

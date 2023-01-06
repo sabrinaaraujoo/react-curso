@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // custom hook
 
@@ -12,7 +12,7 @@ function App() {
   const [products, setProducts] = useState([]);
 
   // custom
-  const { data: items } = useFetch(url);
+  const { data: items, httpConfig } = useFetch(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -43,20 +43,24 @@ function App() {
       name,
       price,
     };
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(product),
-    });
+    // const res = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(product),
+    // });
 
-    // carregamento dinâmico
+    // // carregamento dinâmico
 
-    const addedProduct = await res.json();
+    // const addedProduct = await res.json();
 
-    // Carregameto dinâmico
-    setProducts((prevProducts) => [...prevProducts, addedProduct]);
+    // // Carregameto dinâmico
+    // setProducts((prevProducts) => [...prevProducts, addedProduct]);
+
+    // Refatorando o POST
+
+    httpConfig(product, "POST");
 
     setName("");
     setPrice("");
