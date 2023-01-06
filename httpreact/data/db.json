@@ -39,6 +39,21 @@
       "name": "estojo",
       "price": "10.00",
       "id": 11
+    },
+    {
+      "name": "pilha",
+      "price": "1.50",
+      "id": 12
+    },
+    {
+      "name": "pilha",
+      "price": "1.50",
+      "id": 13
+    },
+    {
+      "name": "monitor",
+      "price": "1000.00",
+      "id": 14
     }
   ]
 }
