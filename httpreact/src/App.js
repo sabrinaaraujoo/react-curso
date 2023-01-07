@@ -6,7 +6,9 @@ import { useState } from "react";
 
 import { useFetch } from "./hooks/useFetch";
 
-const url = "http://localhost:3000/products";
+const url = "http://localhost:3000/products/";
+
+// const id = 2;
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -60,10 +62,16 @@ function App() {
 
     // Refatorando o POST
 
-    httpConfig(product, "POST");
-
     setName("");
     setPrice("");
+
+    httpConfig(product, "POST");
+  };
+
+  // desafio: utilizar o DELETE
+
+  const deleteProduct = (id) => {
+    httpConfig(id, "DELETE");
   };
 
   return (
@@ -78,6 +86,9 @@ function App() {
             items.map((product) => (
               <li key={product.id}>
                 {product.name} - R$ {product.price}
+                <button onClick={() => deleteProduct(product.id)}>
+                  Excluir
+                </button>
               </li>
             ))}
         </ul>
