@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Estojo",
+            "price": "10.50"
+        },
+        {
+            "id": 2,
+            "name": "Fichário",
+            "price": "24.00"
+        },
+        {
+            "id": 3,
+            "name": "Livro",
+            "price": "50.00"
+        }
+    ]
+}
